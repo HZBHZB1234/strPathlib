@@ -41,8 +41,9 @@ Path('hello')
 
 import pathlib
 from pathlib import __all__ as _pathlib_all
+from typing import Union, Optional, Tuple, Dict, List
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = _pathlib_all
 
@@ -98,7 +99,7 @@ class StrPath():
         """
         return self.as_posix().center(width, fillchar)
 
-    def count(self, sub: str, start: int | None = None, end: int | None = None) -> int:
+    def count(self, sub: str, start: Optional[int] = None, end: Optional[int] = None) -> int:
         """
         Return the number of non-overlapping occurrences of substring sub.
 
@@ -122,7 +123,7 @@ class StrPath():
         return self.as_posix().encode(encoding, errors)
 
     def endswith(
-        self, suffix: str | tuple[str, ...], start: int | None = None, end: int | None = None
+        self, suffix: Union[str, Tuple[str]], start: Optional[int] = None, end: Optional[int] = None
     ) -> bool:
         """
         Return True if the string ends with the specified suffix, False otherwise.
@@ -140,7 +141,7 @@ class StrPath():
         """
         return self.as_posix().expandtabs(tabsize)
 
-    def find(self, sub: str, start: int | None = None, end: int | None = None) -> int:
+    def find(self, sub: str, start: Optional[int] = None, end: Optional[int] = None) -> int:
         """
         Return the lowest index where substring sub is found.
 
@@ -155,13 +156,13 @@ class StrPath():
         """
         return self.as_posix().format(*args, **kwargs)
 
-    def format_map(self, mapping: dict[str, object]) -> str:
+    def format_map(self, mapping: Dict[str, object]) -> str:
         """
         Return a formatted version of the string, using substitutions from mapping.
         """
         return self.as_posix().format_map(mapping)
 
-    def index(self, sub: str, start: int | None = None, end: int | None = None) -> int:
+    def index(self, sub: str, start: Optional[int] = None, end: Optional[int] = None) -> int:
         """
         Return the lowest index where substring sub is found.
 
@@ -294,7 +295,7 @@ class StrPath():
         """
         return self.as_posix().lower()
 
-    def lstrip(self, chars: str | None = None) -> str:
+    def lstrip(self, chars: Optional[str] = None) -> str:
         """
         Return a copy of the string with leading whitespace removed.
 
@@ -302,7 +303,7 @@ class StrPath():
         """
         return self.as_posix().lstrip(chars)
 
-    def maketrans(self, *args: object, **kwargs: object) -> dict[int, int | None]:
+    def maketrans(self, *args: object, **kwargs: object) -> Dict[int, Optional[int]]:
         """
         Return a translation table usable for str.translate().
 
@@ -316,7 +317,7 @@ class StrPath():
         """
         return self.as_posix().maketrans(*args, **kwargs)
 
-    def partition(self, sep: str) -> tuple[str, str, str]:
+    def partition(self, sep: str) -> Tuple[str, str, str]:
         """
         Partition the string into three parts using the given separator.
 
@@ -354,7 +355,7 @@ class StrPath():
         """
         return self.as_posix().replace(old, new, count)
 
-    def rfind(self, sub: str, start: int | None = None, end: int | None = None) -> int:
+    def rfind(self, sub: str, start: Optional[int] = None, end: Optional[int] = None) -> int:
         """
         Return the highest index where substring sub is found.
 
@@ -363,7 +364,7 @@ class StrPath():
         """
         return self.as_posix().rfind(sub, start, end)
 
-    def rindex(self, sub: str, start: int | None = None, end: int | None = None) -> int:
+    def rindex(self, sub: str, start: Optional[int] = None, end: Optional[int] = None) -> int:
         """
         Return the highest index where substring sub is found.
 
@@ -380,7 +381,7 @@ class StrPath():
         """
         return self.as_posix().rjust(width, fillchar)
 
-    def rpartition(self, sep: str) -> tuple[str, str, str]:
+    def rpartition(self, sep: str) -> Tuple[str, str, str]:
         """
         Partition the string into three parts using the given separator.
 
@@ -391,7 +392,7 @@ class StrPath():
         """
         return self.as_posix().rpartition(sep)
 
-    def rsplit(self, sep: str | None = None, maxsplit: int = -1) -> list[str]:
+    def rsplit(self, sep: Optional[str] = None, maxsplit: int = -1) -> List[str]:
         """
         Return a list of the words in the string, using sep as the delimiter string.
 
@@ -400,7 +401,7 @@ class StrPath():
         """
         return self.as_posix().rsplit(sep, maxsplit)
 
-    def rstrip(self, chars: str | None = None) -> str:
+    def rstrip(self, chars: Optional[str] = None) -> str:
         """
         Return a copy of the string with trailing whitespace removed.
 
@@ -408,7 +409,7 @@ class StrPath():
         """
         return self.as_posix().rstrip(chars)
 
-    def split(self, sep: str | None = None, maxsplit: int = -1) -> list[str]:
+    def split(self, sep: Optional[str] = None, maxsplit: int = -1) -> List[str]:
         """
         Return a list of the words in the string, using sep as the delimiter string.
 
@@ -431,7 +432,7 @@ class StrPath():
         """
         return self.as_posix().split(sep, maxsplit)
 
-    def splitlines(self, keepends: bool = False) -> list[str]:
+    def splitlines(self, keepends: bool = False) -> List[str]:
         """
         Return a list of the lines in the string, breaking at line boundaries.
 
@@ -441,7 +442,7 @@ class StrPath():
         return self.as_posix().splitlines(keepends)
 
     def startswith(
-        self, prefix: str | tuple[str, ...], start: int | None = None, end: int | None = None
+        self, prefix: Union[str,Tuple[str]], start: Optional[int] = None, end: Optional[int] = None
     ) -> bool:
         """
         Return True if S starts with the specified prefix, False otherwise.
@@ -452,7 +453,7 @@ class StrPath():
         """
         return self.as_posix().startswith(prefix, start, end)
 
-    def strip(self, chars: str | None = None) -> str:
+    def strip(self, chars: Optional[str] = None) -> str:
         """
         Return a copy of the string with leading and trailing whitespace removed.
 
@@ -475,7 +476,7 @@ class StrPath():
         """
         return self.as_posix().title()
 
-    def translate(self, table: dict[int, int | str | None]) -> str:
+    def translate(self, table: Dict[int, Union[int, str, None]]) -> str:
         """
         Return a copy of the string in which each character has been mapped through the given translation table.
 

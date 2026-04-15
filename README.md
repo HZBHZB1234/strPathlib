@@ -3,7 +3,9 @@
 [![Python Version](https://img.shields.io/badge/python-3.4%2B-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
-**StrPathlib** is a lightweight enhancement to Python's standard [`pathlib`](https://docs.python.org/3/library/pathlib.html) library. By providing a mixin class `StrPath`, it enables all path objects (`Path`, `PosixPath`, `WindowsPath`, etc.) to directly invoke string instance methods (such as `.upper()`, `.startswith()`, `.replace()`), eliminating the need to manually convert to a string each time.
+**StrPathlib** is a lightweight enhancement to Python's standard [`pathlib`](https://docs.python.org/3/library/pathlib.html) library. By providing a mixin class `StrPath`, it enables all path objects (`Path`, `PosixPath`, `WindowsPath`, etc.) to directly invoke string instance methods (such as `.upper()`, `.startswith()`, `.replace()`), eliminating the need to manually convert to a string each time.  
+
+[中文版](https://github.com/HZBHZB1234/strPathlib/blob/main/README_CN.md)
 
 ## Features
 
